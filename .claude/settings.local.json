@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv email:*)",
+      "Bash(mv calendar:*)",
+      "Bash(python -c \"import py_compile; import glob; errors=[]; [errors.append\\(f\\) for f in glob.glob\\(''**/*.py'', recursive=True\\) if not \\(lambda f: \\(py_compile.compile\\(f, doraise=True\\), True\\)[-1]\\).__call__\\(f\\) if False]; print\\(''Compiling...''\\); [py_compile.compile\\(f, doraise=True\\) or print\\(f''  OK: {f}''\\) for f in sorted\\(glob.glob\\(''**/*.py'', recursive=True\\)\\)]\")",
+      "Bash(python -m py_compile server.py)",
+      "Bash(python -m py_compile config.py)",
+      "Bash(python -m py_compile auth/token_manager.py)",
+      "Bash(python -m py_compile auth/tools.py)",
+      "Bash(python -m py_compile utils/graph_api.py)",
+      "Bash(mkdir -p src)",
+      "Bash(mv auth:*)",
+      "Bash(find d:/codeex-workspace/outlook-mcp/src -type d -name __pycache__ -exec rm -rf {} +)",
+      "Bash(pip install:*)",
+      "Bash(USE_TEST_MODE=true python -c \":*)"
+    ]
+  }
+}
